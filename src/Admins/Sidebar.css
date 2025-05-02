@@ -1,0 +1,47 @@
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background: #333;
+    height: 100vh;
+    color: white;
+    padding-top: 30px;
+    transition: width 0.3s ease;
+  }
+  
+  .sidebar.hovered {
+    width: 280px; /* Expand sidebar when hovered */
+  }
+  
+  .sidebar-header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+  }
+  
+  .sidebar-menu li {
+    padding: 15px 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar-menu li:hover {
+    background: #444;
+  }
+  
+  .sidebar-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: color 0.3s ease;
+  }
+  
+  .sidebar-link:hover {
+    color: #007bff;
+  }
+  

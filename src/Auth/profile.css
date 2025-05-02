@@ -1,0 +1,55 @@
+/* Profile Card */
+
+.profile-card {
+    margin-top: 20px;
+    width: 400px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    text-align: center;
+  }
+  
+  /* Profile Title */
+  .profile-title h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Profile Info Section */
+  .profile-info {
+    margin-top: 20px;
+  }
+  
+  .profiletxt {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  /* Logout Button */
+  .logout-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .logout-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Loading Text */
+  .profile-info p {
+    font-size: 16px;
+    color: #777;
+  }
+  

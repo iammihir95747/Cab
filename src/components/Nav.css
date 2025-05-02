@@ -1,0 +1,160 @@
+.navbar {
+  background-color: #000;
+  display: flex;
+  justify-content: space-between; /* Changed from space-around to space-between */
+  align-items: center;
+  padding: 30px 30px;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-logo {
+  font-size: 24px;
+  padding-left: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  margin-right: auto; /* Added to push logo to the left */
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center; /* Added to center the menu items */
+  flex-grow: 1; /* Added to allow the menu to take up available space */
+}
+
+.nav-menu li {
+  margin-left: 20px;
+  margin-right: 20px; /* Added for equal spacing on both sides */
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  position: relative; /* Added for the pseudo-element */
+}
+
+.nav-link:hover {
+  color: #ff6600;
+}
+
+.nav-link::after { /* Added pseudo-element for the line */
+  content: '';
+  position: absolute;
+  bottom: -2px; /* Adjust as needed */
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ff6600; /* Line color */
+  transition: width 0.3s ease; /* Smooth transition */
+}
+
+.nav-link:hover::after {
+  width: 100%; /* Expand the line on hover */
+}
+
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-right button {
+  margin-left: 10px;
+}
+
+.nav-buttons-right {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-button {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #cc5200;
+}
+
+.call-now {
+  background-color: #000000;
+}
+
+.call-now:hover {
+  background-color: #1e8e48;
+}
+
+.whatsapp {
+  background-color: #25d366;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.whatsapp:hover {
+  background-color: #1e8e48;
+}
+.profilenav{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav-menu.active {
+    display: flex;
+    opacity: 1;
+  }
+
+  .nav-menu li {
+    margin: 10px 0;
+  }
+
+  .nav-right.desktop-only {
+    display: none;
+  }
+  .nav-buttons-right {
+    display: flex;
+    gap: 10px;
+}
+}

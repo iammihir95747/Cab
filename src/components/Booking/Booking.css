@@ -1,0 +1,180 @@
+/* Root container */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  background: black;
+  color: white;
+  padding: 2rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem 4rem;
+  }
+}
+
+/* Left Section */
+.contact-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+  text-align: left;
+  padding: 0 1rem;
+}
+
+.contact-subtitle {
+  color: #facc15;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-section h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.contact-section p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Right Form Section */
+.contact-form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+
+.form-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Form Inputs */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  background: white;
+  color: black;
+  padding: 10px;
+  font-size: 0.95rem;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+}
+
+.contact-form input[type="datetime-local"] {
+  padding: 10px;
+}
+
+.contact-form textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.contact-form ::placeholder {
+  color: #333;
+}
+
+/* Button */
+.contact-form button {
+  background: #facc15;
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #eab308;
+}
+
+/* Icons (Optional Enhancement for Future) */
+.input-field {
+  position: relative;
+}
+
+.input-field input,
+.input-field select,
+.input-field textarea {
+  padding-left: 40px;
+}
+
+.input-field .form-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #facc15;
+}
+
+/* Toast fixes (from react-hot-toast) */
+.toaster {
+  z-index: 9999;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .contact-info-box,
+  .contact-form-box {
+    margin: 0;
+    padding: 0;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .form-heading {
+    font-size: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 1.7rem;
+  }
+
+  .contact-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .contact-form button {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+}
