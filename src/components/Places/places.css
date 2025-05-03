@@ -1,0 +1,122 @@
+/* Main container */
+.tourism-container {
+  padding: 5rem 1.5rem;
+  background: linear-gradient(to bottom, #fff7d1, #ffffff);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Section titles */
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+    color: #facc15;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Grid for place cards */
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+}
+
+/* Individual place card */
+.place-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.place-card:hover {
+  box-shadow: 0 12px 45px rgba(255, 184, 5, 0.5);
+  transform: translateY(-5px);
+}
+
+/* Image inside card */
+.place-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  animation: pulse 2s infinite;
+}
+
+/* Place name and description */
+.place-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f59e0b;
+  margin-bottom: 0.5rem;
+}
+
+.place-card p {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* WhatsApp button */
+.whatsapp-btn {
+  background-color: #f4b400;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #e0a800;
+}
+
+/* Table Section */
+.table-container {
+  overflow-x: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.places-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.places-table th,
+.places-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.places-table th {
+  background-color: #f4b400;
+  color: white;
+  font-weight: bold;
+}
+
+.places-table tr:hover {
+  background-color: #fff5cc;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}

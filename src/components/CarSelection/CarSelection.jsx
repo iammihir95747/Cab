@@ -4,7 +4,7 @@ import axios from 'axios';
 import './CarSelection.css'; // Custom styling
 
 const API_VITE = "https://cabserver.onrender.com";
-const WHATSAPP_BUSINESS_NUMBER = '+919574713004 '; // Your WhatsApp Business number (replace with actual)
+const WHATSAPP_BUSINESS_NUMBER = '+919574713004'; // Your WhatsApp Business number (replace with actual)
 
 const CarSelection = () => {
   const [cars, setCars] = useState([]);
@@ -33,8 +33,6 @@ const CarSelection = () => {
       Seats: ${car.capacity}
       Rate: ₹${car.ratePerKm}/km
       Base Fare: ₹${car.baseFare}
-      Pickup Location: [User's Pickup Location]  // Replace with dynamic location
-      Dropoff Location: [User's Dropoff Location] // Replace with dynamic location
     `;
     
     // URL encode the message for WhatsApp
@@ -55,31 +53,31 @@ const CarSelection = () => {
   return (
     <section id="car-selection" className="container my-5">
       <h2 className="text-center mb-4">Select a Car</h2>
-      <div className="row justify-content-center">
+      <div className="row">
         {loading ? (
           <p>🚗 Car is loading...</p>
         ) : error ? (
           <p className="text-danger">❌ {error}</p>
         ) : (
           cars.map((car, index) => (
-            <div key={index} className="car-card col-md-4 mb-4">
-              <div className="card h-100 text-center shadow p-3">
-                <img
-                  src={car.imageUrl}
-                  alt={car.modelName}
-                  className="card-img-top"
-                  style={{ height: '200px', objectFit: 'cover' }}
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{car.modelName}</h5>
-                  <p className="card-text">Type: {car.type}</p>
-                  <p className="card-text">Seats: {car.capacity}</p>
-                  <p className="card-text">Rate: ₹{car.ratePerKm}/km</p>
-                  <p className="card-text">Base Fare: ₹{car.baseFare}</p>
-                  <button className="btn btn-primary" onClick={() => handleBookNow(car)}>Book Now</button>
-                </div>
+            <div key={index} className="car-item col-md-4 col-sm-6 col-12">
+            <div className="car-box">
+              <img
+                src={car.imageUrl}
+                alt={car.modelName}
+                className="car-image"
+              />
+              <div className="car-info">
+                <h5>{car.modelName}</h5>
+                <p>Type: {car.type}</p>
+                <p>Seats: {car.capacity}</p>
+                <p>Rate: ₹{car.ratePerKm}/km</p>
+                <p>Base Fare: ₹{car.baseFare}</p>
+                <button className="book-btn" onClick={() => handleBookNow(car)}>Book Now</button>
               </div>
             </div>
+          </div>
+          
           ))
         )}
       </div>

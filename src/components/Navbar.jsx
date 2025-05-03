@@ -84,6 +84,7 @@ const Navbar = () => {
       <ul className={`nav-menu ${menuOpen ? "active" : ""}`}>
         <li><Link to="/Homepage" className="nav-link" onClick={() => setMenuOpen(false)}>Home</Link></li>
         <li><Link to="/services" className="nav-link" onClick={() => setMenuOpen(false)}>Services</Link></li>
+        <li><Link to="/Places" className="nav-link" onClick={() => setMenuOpen(false)}>Places</Link></li>
         <li><Link to="/About" className="nav-link" onClick={() => setMenuOpen(false)}>About</Link></li>
 
         {/* If logged in and the user is an admin, show the admin button */}

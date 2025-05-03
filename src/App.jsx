@@ -14,6 +14,7 @@ import Category from './Auth/Category';
 import Booking from './components/Booking/Booking';
 import Admin from './Admins/Admin';
 import AdminUserManagement from './Admins/Usermanagementkit/AdminUserManagement';
+import Places from './components/Places/Places';
 
 function Layout() {
     return (
@@ -32,8 +33,8 @@ function Layout() {
                 <Route path="/category" element={<Category />} />
                 <Route path="/admin" element={<Admin />} />
                 <Route path="/admin/users" element={<AdminUserManagement />} />
+                <Route path="/Places" element={<Places />} />
 
-            
             </Routes>
         </>
     );
