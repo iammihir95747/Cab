@@ -57,7 +57,7 @@ const Navbar = () => {
   };
 
   const handleWhatsApp = () => {
-    const message = `Hello 👋\nI want to book a cab for a tour.\n\nPlease share:\n📍 Pickup Location:\n📌 Drop Location:\n🕒 Pickup Date & Time:`;
+    const message = `Hello, \nI want to book a cab for a tour.`;
     const encodedMessage = encodeURIComponent(message);
   
     // Check if the user is on Android (this is a simple check, you can refine it if needed)

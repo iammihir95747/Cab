@@ -3,8 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './CarSelection.css'; // Custom styling
 
-const API_VITE = "https://cabserver.onrender.com";
-const WHATSAPP_BUSINESS_NUMBER = '+919574713004'; // Your WhatsApp Business number (replace with actual)
+// const API_VITE = "https://cabserver.onrender.com";
+
+const WHATSAPP_BUSINESS_NUMBER = '+919574713004'; 
+ const API_VITE = "http://localhost:5001";
+
 
 const CarSelection = () => {
   const [cars, setCars] = useState([]);
@@ -15,14 +18,17 @@ const CarSelection = () => {
   // Fetch available cars
   const fetchCars = async () => {
     try {
-      const response = await axios.get(`${API_VITE}/api/vehicles/available`);
-      setCars(response.data);  // Assuming response.data contains car information
+      const response = await axios.get(`${API_VITE}/api/vehicles`);
+      console.log(response.data);  // Check if all cars are being returned
+      setCars(response.data);  // This should now include all cars, not just Urbania
       setLoading(false);
     } catch (error) {
       setError("Failed to load cars.");
       setLoading(false);
     }
   };
+  
+  
 
   // Handle "Book Now" button click
   const handleBookNow = (car) => {

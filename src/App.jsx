@@ -12,14 +12,12 @@ import Profile from './Auth/Profile';
 import Services from './components/Services';
 import Category from './Auth/Category';
 import Booking from './components/Booking/Booking';
-import Admin from './Admins/Admin';
-import AdminUserManagement from './Admins/Usermanagementkit/AdminUserManagement';
-import Places from './components/Places/Places';
+import Places from './components/Places/Places'
 
 function Layout() {
     return (
         <>
-          
+           
             <Navbar /> {/* Always show Home now */}
             <Routes>
                 <Route path="/" element={<Homepage />} />
@@ -30,11 +28,9 @@ function Layout() {
                 <Route path="/Register" element={<Register />} />
                 <Route path="/Login" element={<Login />} />
                 <Route path="/Profile" element={<Profile />} />
-                <Route path="/category" element={<Category />} />
-                <Route path="/admin" element={<Admin />} />
-                <Route path="/admin/users" element={<AdminUserManagement />} />
                 <Route path="/Places" element={<Places />} />
-
+                <Route path="/category" element={<Category />} />
+               
             </Routes>
         </>
     );
