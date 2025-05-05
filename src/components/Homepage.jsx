@@ -65,7 +65,7 @@ const Homepage = () => {
         <CarSelection />
       </section>
 
-      <Footer />
+      <Footer />  
     </>
   );
 };

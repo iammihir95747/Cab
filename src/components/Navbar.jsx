@@ -57,23 +57,9 @@ const Navbar = () => {
   };
 
   const handleWhatsApp = () => {
-    const message = `Hello, \nI want to book a cab for a tour.`;
-    const encodedMessage = encodeURIComponent(message);
-  
-    // Check if the user is on Android (this is a simple check, you can refine it if needed)
-    const isAndroid = /android/i.test(navigator.userAgent);
-  
-    if (isAndroid) {
-      // Android - try to open WhatsApp Business using deep link
-      window.location.href = `intent://send?phone=919574713004&text=${encodedMessage}#Intent;package=com.whatsapp.w4b;scheme=smsto;end`;
-    } else {
-      // Fallback to regular WhatsApp link
-      window.open(`https://wa.me/919574713004?text=${encodedMessage}`, "_blank");
-    }
+    navigate('/Booking')
   };
   
-  
-
   return (
     <nav className="navbar">
       <div className="nav-logo">
@@ -85,6 +71,7 @@ const Navbar = () => {
         <li><Link to="/Homepage" className="nav-link" onClick={() => setMenuOpen(false)}>Home</Link></li>
         <li><Link to="/services" className="nav-link" onClick={() => setMenuOpen(false)}>Services</Link></li>
         <li><Link to="/Places" className="nav-link" onClick={() => setMenuOpen(false)}>Places</Link></li>
+        <li><Link to="/Vehicles" className="nav-link" onClick={() => setMenuOpen(false)}>Vehicles</Link></li>
         <li><Link to="/About" className="nav-link" onClick={() => setMenuOpen(false)}>About</Link></li>
 
         {/* If logged in and the user is an admin, show the admin button */}
@@ -101,7 +88,7 @@ const Navbar = () => {
         {!isLoggedIn ? (
           <>
             {/* Add any actions for when the user is not logged in */}
-          </>
+          </> 
         ) : (
           <>
             <button className="nav-button" onClick={handleLogout}>Logout</button>
@@ -113,9 +100,10 @@ const Navbar = () => {
       {/* Right side buttons (Call Now and WhatsApp) */}
       <div className="nav-buttons-right">
         <button className="nav-button call-now" onClick={handleCallNow}>📞 Call Now</button>
-        <button className="nav-button whatsapp" onClick={handleWhatsApp}>
+       <button className="nav-button whatsapp" onClick={handleWhatsApp}>
   <i className="fa fa-whatsapp"></i> WhatsApp
 </button>
+
 
       </div>
     </nav>

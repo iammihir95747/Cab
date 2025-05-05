@@ -1,6 +1,7 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './places.css';
-import Footer from '../Footer/Footer'
+import Footer from '../Footer/Footer';
 
 const WHATSAPP_BUSINESS_NUMBER = '+919574713004';
 
@@ -21,9 +22,9 @@ const famousPlaces = [
     description: 'The only home of the Asiatic lions in the wild.',
   },
   {
-    name: 'statue of unity',
+    name: 'Statue of Unity',
     image: 'https://www.holidify.com/images/cmsuploads/compressed/shutterstock_1317845540_20191031110021_20191031110103.png',
-    description: 'The Statue of Unity is the worlds tallest statue'
+    description: 'The Statue of Unity is the world\'s tallest statue',
   },
 ];
 
@@ -39,61 +40,53 @@ const galleryImages = [
 ];
 
 export default function Places() {
+  const navigate = useNavigate(); // Initialize useNavigate
 
+  // Updated handleBookNow function to navigate to the Booking component
   const handleBookNow = (place) => {
-    const message = `
-      *Tour Inquiry:*
-      Destination: ${place.name}
-      ${place.description ? `Details: ${place.description}` : ''}
-    `;
-
-    const encoded = encodeURIComponent(message);
-    const whatsappLink = `https://wa.me/${WHATSAPP_BUSINESS_NUMBER}?text=${encoded}`;
-    window.open(whatsappLink, '_blank');
+    navigate('/booking', { state: { place } }); // Pass place details to Booking page
   };
 
   return (
     <>
-    <div className="tourism-container">
-      <h2 className="section-title">
-        Some Of The Famous Travelling Places
-      </h2>
+      <div className="tourism-container">
+        <h2 className="section-title">Some Of The Famous Travelling Places</h2>
 
-      <div className="places-grid">
-        {famousPlaces.map((place, i) => (
-          <div key={i} className="place-card">
-            <img src={place.image} alt={place.name} className="place-image" />
-            <h3>{place.name}</h3>
-            <p>{place.description}</p>
-            <button className="whatsapp-btn" onClick={() => handleBookNow(place)}>
-              📲 Book Now
-            </button>
-          </div>
-        ))}
-      </div>
+        <div className="places-grid">
+          {famousPlaces.map((place, i) => (
+            <div key={i} className="place-card">
+              <img src={place.image} alt={place.name} className="place-image" />
+              <h3>{place.name}</h3>
+              <p>{place.description}</p>
+              <button className="whatsapp-btn" onClick={() => handleBookNow(place)}>
+                📲 Book Now
+              </button>
+            </div>
+          ))}
+        </div>
 
-      <h2 className="section-title">All Tourist Places in Gujarat</h2>
-      <div className="table-container">
-        <table className="places-table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>District</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            {allPlaces.map((place, i) => (
-              <tr key={i}>
-                <td>{place.name}</td>
-                <td>{place.district}</td>
-                <td>{place.type}</td>
+        <h2 className="section-title">All Tourist Places in Gujarat</h2>
+        <div className="table-container">
+          <table className="places-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>District</th>
+                <th>Type</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {allPlaces.map((place, i) => (
+                <tr key={i}>
+                  <td>{place.name}</td>
+                  <td>{place.district}</td>
+                  <td>{place.type}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
       <Footer />
     </>
   );

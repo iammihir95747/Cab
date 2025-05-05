@@ -13,6 +13,8 @@ import Services from './components/Services';
 import Category from './Auth/Category';
 import Booking from './components/Booking/Booking';
 import Places from './components/Places/Places'
+import CarSelection from './components/CarSelection/CarSelection';
+import Vehicles from './components/Vehicles/Vehicles';
 
 function Layout() {
     return (
@@ -29,6 +31,7 @@ function Layout() {
                 <Route path="/Login" element={<Login />} />
                 <Route path="/Profile" element={<Profile />} />
                 <Route path="/Places" element={<Places />} />
+                <Route path="/Vehicles" element={<Vehicles />} />
                 <Route path="/category" element={<Category />} />
                
             </Routes>
